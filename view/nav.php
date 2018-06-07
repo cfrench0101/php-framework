@@ -9,13 +9,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo APP_DOC_ROOT . '/home'; ?>">Project name</a>
+          <a class="navbar-brand" href="<?php echo APP_DOC_ROOT . '/home'; ?>">Ron French Photography</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="<?php echo APP_DOC_ROOT . '/home'; ?>">Home</a></li>
-            <li><a href="<?php echo APP_DOC_ROOT . '/blog'; ?>">Blog</a></li>
-            <li><a href="#">Menu 3</a></li>
+            <li><a href="<?php echo APP_DOC_ROOT . '/home';    ?>">Home</a></li>
+            <li><a href="<?php echo APP_DOC_ROOT . '/product'; ?>">Gallery</a></li>
+            <li><a href="<?php echo APP_DOC_ROOT . '/blog';    ?>">Blog</a></li>
+            <li><a href="<?php echo APP_DOC_ROOT . '/about';   ?>">About</a></li>
+            <li><a href="<?php echo APP_DOC_ROOT . '/contact'; ?>">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 4 <b class="caret"></b></a>
               <ul class="dropdown-menu">
