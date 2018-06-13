@@ -11,10 +11,10 @@
               <li class="nav-header">Blog</li>
               <li><a href="#">Link</a></li>
               <li><a href="#">Link</a></li>
-              <!-- <li class="nav-header">Subcategory</li>
+              <li class="nav-header">Subcategory</li>
               <li><a href="#">Link</a></li>
               <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li> -->
+              <li><a href="#">Link</a></li>
             </ul>
           </div>
         </div>

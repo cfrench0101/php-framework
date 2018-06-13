@@ -26,12 +26,25 @@ if ( 0 !== APP_AUTH_TYPE && !isset($_SESSION['username']) && 'auth' != $route->g
 // Route request to desired controller
 switch ( $route->getController() ) {
 
+
+    case 'about':
+        include( APP_CONTROLLER . '/aboutController.php');
+        break;
+
     case 'auth':
         include( APP_CONTROLLER . '/authController.php');
         break;
 
     case 'blog':
         include( APP_CONTROLLER . '/blogController.php');
+        break;
+
+    case 'cart':
+        include( APP_CONTROLLER . '/cartController.php');
+        break;
+
+    case 'contact':
+        include( APP_CONTROLLER . '/contactController.php');
         break;
 
     case 'home':

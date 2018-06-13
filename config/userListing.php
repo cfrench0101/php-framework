@@ -9,15 +9,16 @@
         array (
             // Demo User
             array (
-                'username'  => 'jdoe',
-                'password'  => 'kitten',
-                'email'     => 'johndoe@gmail.com',
-                'firstName' => 'John',
-                'lastName'  => 'Doe',
+                'username'  => 'cfrench',
+                'password'  => 'dixie26',
+                'email'     => 'cfrench0101@gmail.com',
+                'firstName' => 'Cody',
+                'lastName'  => 'French',
                 'role'      => array(
                     'ROLE_USER',
                 ),
             ),
+
             // Demo Admin User
             array (
                 'username'  => 'admin',

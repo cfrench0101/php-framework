@@ -2,6 +2,9 @@
         <!-- page content -->
         <div class="col-md-9">
           <div class="well pageContent">
+            <div class="pageTitle">
+              <h3>Blog</h3>
+              <hr>
 
 
 <?php foreach ($posts as $key => $post) {

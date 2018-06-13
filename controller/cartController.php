@@ -7,41 +7,40 @@ include( APP_VIEW . '/header.php' );
 # Include main navigation
 include( APP_VIEW . '/nav.php' );
 
+
 switch ( $route->getAction() ) {
 
-    case 'add':
-        $categories = listCategories();
-        $productId = $route->getParams()[2];
-        $product = getProduct($productId);
-        addCart($_POST, $productId);
-        $productImage = APP_IMG . '/products/' . $product['id'] . '.jpg';
-        include( APP_VIEW .'/product/listSubNav.php' );
-        include( APP_VIEW .'/product/productView.php' );
-        break;
-
-    case 'list':
-        $categoryId = (array_key_exists(2,$route->getParams())) ? $route->getParams()[2] : 1;
-        $categories = listCategories();
-        $products = listProducts($categoryId);
-        include( APP_VIEW .'/product/listSubNav.php' );
-        include( APP_VIEW .'/product/listView.php' );
-        break;
+    case 'clear':
+        $_SESSION['cart'] = 0;
+        unset($_SESSION['cart']);
+        header('Location: ' . APP_DOC_ROOT . '/cart/cartView');
 
     case 'view':
         $categories = listCategories();
         $productId = $route->getParams()[2];
         $product = getProduct($productId);
         $productImage = APP_IMG . '/products/' . $product['id'] . '.jpg';
-        include( APP_VIEW .'/product/listSubNav.php' );
-        include( APP_VIEW .'/product/productView.php' );
+        include( APP_VIEW .'/cart/listSubNav.php' );
+        include( APP_VIEW .'/cart/cartView.php' );
+        break;
+
+    case 'remove':
+        $categories = listCategories();
+        $productId = $route->getParams()[2];
+        $product = getProduct($productId);
+        removeCart($_POST, $productId);
+        $productImage = APP_IMG . '/products/' . $product['id'] . '.jpg';
+        include( APP_VIEW .'/cart/listSubNav.php' );
+        include( APP_VIEW .'/cart/cartView.php' );
         break;
 
     default:
-        $categoryId = (array_key_exists(2,$route->getParams())) ? $route->getParams()[2] : 1;
         $categories = listCategories();
-        $products = listProducts($categoryId);
-        include( APP_VIEW .'/product/listSubNav.php' );
-        include( APP_VIEW .'/product/listView.php' );
+        $productId = $route->getParams()[2];
+        $product = getProduct($productId);
+        $productImage = APP_IMG . '/products/' . $product['id'] . '.jpg';
+        include( APP_VIEW .'/cart/listSubNav.php' );
+        include( APP_VIEW .'/cart/cartView.php' );
         break;
 }
 
@@ -52,10 +51,10 @@ include( APP_VIEW . '/footer.php' );
 
 // Local functions
 
-function addCart($formArray, $productId) {
+function removeCart($formArray, $productId) {
     if(isset($formArray['qty'])) {
         if (isset($_SESSION['cart'][$productId])) {
-          $_SESSION['cart'][$productId] += $formArray['qty'];
+          $_SESSION['cart'][$productId] -= $formArray['qty'];
         }
         else {
           $_SESSION['cart'][$productId] = $formArray['qty'];

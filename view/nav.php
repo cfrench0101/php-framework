@@ -18,7 +18,7 @@
             <li><a href="<?php echo APP_DOC_ROOT . '/blog';    ?>">Blog</a></li>
             <li><a href="<?php echo APP_DOC_ROOT . '/about';   ?>">About</a></li>
             <li><a href="<?php echo APP_DOC_ROOT . '/contact'; ?>">Contact</a></li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 4 <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -29,12 +29,15 @@
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li> -->
           </ul>
 
 <?php if ( 0 !== APP_AUTH_TYPE && isset($_SESSION["username"]) ) { ?>
 
           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="<?php echo APP_DOC_ROOT . '/cart'; ?>">Shopping Cart</a>
+            </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php print $_SESSION['username']; ?> <b class="caret"></b></a>
               <ul class="dropdown-menu">
